@@ -63,10 +63,10 @@ Nephia::Plugin::Otogiri - Quick hack database plugin for Nephia
     use Nephia plugins => ['Otogiri'];
     app {
         database_do <<'EOF';
-CREATE TABLE member (
-    ...
-);
-EOF
+    CREATE TABLE member (
+        ...
+    );
+    EOF
         db->insert(member => {...});
     };
 
