@@ -55,15 +55,38 @@ __END__
 
 =head1 NAME
 
-Nephia::Plugin::Otogiri - It's new $module
+Nephia::Plugin::Otogiri - Quick hack database plugin for Nephia
 
 =head1 SYNOPSIS
 
-    use Nephia::Plugin::Otogiri;
+    package MyApp;
+    use Nephia plugins => ['Otogiri'];
+    app {
+        database_do <<'EOF';
+CREATE TABLE member (
+    ...
+);
+EOF
+        db->insert(member => {...});
+    };
 
 =head1 DESCRIPTION
 
-Nephia::Plugin::Otogiri is ...
+Nephia::Plugin::Otogiri is a plugin for L<Nephia>. It provides DSL for accessing to database.
+
+=head1 DSL
+
+=head2 database_do
+
+    database_do $sql;
+
+Execute specified SQL.
+
+=head2 db
+
+    my $db = db;
+
+Returns an L<Otogiri> object.
 
 =head1 LICENSE
 
@@ -71,6 +94,10 @@ Copyright (C) papix.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+L<Otogiri>
 
 =head1 AUTHOR
 
