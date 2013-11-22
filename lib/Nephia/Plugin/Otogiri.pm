@@ -9,7 +9,13 @@ our $VERSION = "0.01";
 
 sub new {
     my ($class, %opts) = @_;
+
+    my %otogiri_opts = %opts;
+    delete $otogiri_opts{app};
+
     my $self = $class->SUPER::new(%opts);
+
+    $self->{otogiri_opts} = \%otogiri_opts;
     $self->{RUN_SQL} = [];
     return $self;
 }
@@ -38,9 +44,9 @@ sub db {
 sub _create_otogiri {
     my ($self) = @_;
 
-    my $otogiri = Otogiri->new(
-        connect_info => $self->{config}->{DBI}->{connect_info},
-    );
+    $self->{otogiri_opts}->{connect_info} ||= $self->{config}->{DBI}->{connect_info};
+    my $otogiri = Otogiri->new( %{$self->{otogiri_opts}} );
+
     for my $sql (@{$self->{RUN_SQL}}) {
         $otogiri->do($sql);
     }
