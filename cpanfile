@@ -7,5 +7,7 @@ on 'test' => sub {
     requires 'Plack::Test';
     requires 'Plack::Builder';
     requires 'HTTP::Request::Common';
+    requires 'Nephia::Plugin::Dispatch';
+    requires 'Nephia::Plugin::JSON';
 };
 
