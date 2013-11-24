@@ -9,13 +9,10 @@ our $VERSION = "0.01";
 
 sub new {
     my ($class, %opts) = @_;
-
-    my %otogiri_opts = %opts;
-    delete $otogiri_opts{app};
-
     my $self = $class->SUPER::new(%opts);
 
-    $self->{otogiri_opts} = \%otogiri_opts;
+    delete $opts{app};
+    $self->{otogiri_opts} = \%opts;
     $self->{RUN_SQL} = [];
     return $self;
 }
