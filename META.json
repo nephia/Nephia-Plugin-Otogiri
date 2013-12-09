@@ -1,10 +1,10 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Quick hack database plugin for Nephia",
    "author" : [
       "papix <mail@papix.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.7.4, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Minilla/v0.9.0, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],
@@ -51,6 +51,8 @@
       "test" : {
          "requires" : {
             "HTTP::Request::Common" : "0",
+            "Nephia::Plugin::Dispatch" : "0",
+            "Nephia::Plugin::JSON" : "0",
             "Plack::Builder" : "0",
             "Plack::Test" : "0",
             "Test::More" : "0.98"
@@ -58,5 +60,19 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/nephia/Nephia-Plugin-Otogiri/issues"
+      },
+      "homepage" : "https://github.com/nephia/Nephia-Plugin-Otogiri",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/nephia/Nephia-Plugin-Otogiri.git",
+         "web" : "https://github.com/nephia/Nephia-Plugin-Otogiri"
+      }
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "ytnobody <ytnobody@gmail.com>"
+   ]
 }

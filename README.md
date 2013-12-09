@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/nephia/Nephia-Plugin-Otogiri.png?branch=master)](https://travis-ci.org/nephia/Nephia-Plugin-Otogiri) [![Coverage Status](https://coveralls.io/repos/nephia/Nephia-Plugin-Otogiri/badge.png?branch=master)](https://coveralls.io/r/nephia/Nephia-Plugin-Otogiri?branch=master)
 # NAME
 
 Nephia::Plugin::Otogiri - Quick hack database plugin for Nephia
